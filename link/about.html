@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+	<html>
+		<head>
+			<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+			<meta name="author" content="aan" />
+			<meta name="viewport" content="width=device-width, initial-scale=1.0">
+			<link rel="stylesheet" href="../css/bootstrap.css" />
+			<link rel="stylesheet" href="../css/font-awesome.css" />
+			<link rel="stylesheet" href="../css/style.css" />
+			<script src="../js/jquery-2.1.4.min.js"></script>
+			<script src="../js/bootstrap.js"></script>
+			<script src="../js/index.js"></script>
+		</head>
+		
+		<body>
+			<nav class="navbar navbar-default navbar-fixed-top" style="background-color: #3d95cd" role="navigation">
+				<div class="container">
+					<div class="navbar-header">
+						<div class="navbar-brand" style="padding: 9px"><a class="btn back btn-warning"><i class="fa fa-fw fa-arrow-circle-left"></i> Kembali</a></div>
+					</div>
+				</div>
+			</nav>
+			
+			<div class="container mt70">
+				<img src="../pic/materi/1.jpg" class="imgmateri img-responsive mb20" />
+				
+				<div class="well">
+					<h4>Nama Aplikasi</h4>
+					<p>Katalog Bengkel Las R2 Jeneponto</p>
+					<h4>Tahun Pembuatan</h4>
+					<p>2016</p>
+					<h4>Deskripsi</h4>
+					<p>Aplikasi Katalog Bengkel Las R2 bertujuan untuk memudahkan pelanggan dari bengkel las R2 untuk mendapatkan informasi tentang produk yang disediakan.</p>
+					<h4>Kontak</h4>
+					<p>BBM : D2FD3CBA, Telp : 085255843289</p>
+				</div>
+			</div>
+		</body>
+		<script>
+			$(".btn").click(function(e){
+				e.preventDefault();
+				history.back(1);
+			});
+		</script>
+	</html>

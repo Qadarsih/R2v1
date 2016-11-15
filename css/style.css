@@ -1,0 +1,123 @@
+@font-face {
+    font-family: 'stout_decoregular';
+    src: url('../fonts/stoutdeco-webfont.eot');
+    src: url('../fonts/stoutdeco-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/stoutdeco-webfont.woff2') format('woff2'),
+         url('../fonts/stoutdeco-webfont.woff') format('woff'),
+         url('../fonts/stoutdeco-webfont.ttf') format('truetype'),
+         url('../fonts/stoutdeco-webfont.svg#stout_decoregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+.navbar-brand-centered {
+    position: absolute;
+    left: 50%;
+    display: block;
+    width: 160px;
+    text-align: center;
+    background-color: transparent;
+}
+.navbar>.container .navbar-brand-centered, 
+.navbar>.container-fluid .navbar-brand-centered {
+    margin-left: -80px;
+}
+
+.logo {
+	height: 40px;
+	margin-left: auto;
+	margin-right: auto;
+	display: block;
+	width: auto;
+	margin-top: -10px;
+}
+
+.mb10 {
+	margin-bottom: 10px;
+}
+
+.mb5 {
+	margin-bottom: 5px;
+}
+
+.mt90 {
+	margin-top: 90px !important;
+}
+
+.imgutama {
+	width: auto;
+	max-height: 400px;
+	margin-left: auto;
+	margin-right: auto;
+	display: block;
+}
+
+.pdm0 {
+	padding: 0px;
+	margin: 0px;
+}
+
+.mb0 {
+	margin-bottom: 0px;
+}
+
+.mt70 {
+	margin-top: 60px;
+}
+
+.mr5 {
+	margin-right: 5px;
+}
+
+.full {
+	width: 100%;
+}
+
+.mb10 {
+	margin-bottom: 40px;
+}
+
+.imgmenu{
+	width:auto;
+	max-height: 200px;
+	margin-left: auto;
+	margin-right: auto;
+	display: block 
+}
+
+.mt40 {
+	margin-top: 40px;
+}
+
+
+.center {
+	text-align: center !important;
+}
+
+.imgmateri {
+	width: auto;
+	max-height: 300px;
+	margin-left: auto;
+	margin-right: auto;
+	display: block;
+}
+
+.imglist {
+	width: 64px;
+	height: auto;
+	
+}
+
+.pd0 {
+	padding: 0
+}
+
+.mb20 {
+	margin-bottom: 10px
+}
+
+.namaproduk {
+	text-align: center;
+	color: white;
+}

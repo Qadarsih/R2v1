@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+	<html>
+		<head>
+			<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+			<meta name="author" content="aan" />
+			<meta name="viewport" content="width=device-width, initial-scale=1.0">
+			<link rel="stylesheet" href="css/bootstrap.css" />
+			<link rel="stylesheet" href="css/font-awesome.css" />
+			<link rel="stylesheet" href="css/style.css" />
+			<script src="js/jquery-2.1.4.min.js"></script>
+			<script src="js/bootstrap.js"></script>
+		</head>
+		
+		<body>
+			 <nav class="navbar navbar-default" style="background-color: #3d95cd" role="navigation">
+				<div class="container">
+					<!-- Brand and toggle get grouped for better mobile display -->
+					<div class="navbar-header">
+						<div class="navbar-brand" style="padding: 9px"><a class="btn back btn-primary"><i class="fa fa-fw fa-arrow-circle-left"></i> Kembali</a></div>
+					</div>
+				</div>
+			</nav>
+			<div class="container" id="list-produk" style="padding: 3px"></div>
+		</body>
+		<script>
+			var cari=location.href.split("?s=")[1];
+			cari=cari.split("+").join(" ");
+			var s=new RegExp(cari,'i');
+			$(".btn").click(function(e){
+				e.preventDefault();
+				history.back(1);
+			});
+			$("#list-produk").html('<div class="h3 alert alert-danger" style="margin-bottom: 7px">Hasil pencarian "'+cari+'"</div>');
+			function getdb(datas,dbloc){
+				$.getJSON(dbloc,function(dbs){
+					datas(dbs);
+				});
+			}
+			getdb(function(db){
+				$.each(db,function(i,v){
+					if (v.nama.search(s)!==-1||v.info.search(s)!==-1) {
+						var list='<a href="link/view.html#'+i+'" style="text-decoration: none">';
+						list+='<div class="well"><div class="media"><div class="media-left media-middle">';
+						list+='<img class="media-object imglist" src="img/'+v.img+'">';
+						list+='</div><div class="media-body">';
+						list+=' <h4 class="media-heading" style="margin-top: 9px">'+v.nama+'</h4>';
+						list+='</div></div></div></a>';
+						$("#list-produk").append(list);
+					}else{
+						if ($("#list-produk").children().length<=1&&i===db.length-1) {
+							$("#list-produk").append('<div class="h3 alert alert-success">Conten yang anda cari tidak ditemukan!</div>');
+						};
+					}
+				});
+			},'dp.json');
+		</script>
+	</html>

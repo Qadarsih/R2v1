@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+	<html>
+		<head>
+			<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+			<meta name="author" content="aan" />
+			<meta name="viewport" content="width=device-width, initial-scale=1.0">
+			<link rel="stylesheet" href="../css/bootstrap.css" />
+			<link rel="stylesheet" href="../css/font-awesome.css" />
+			<link rel="stylesheet" href="../css/style.css" />
+			<script src="../js/jquery-2.1.4.min.js"></script>
+			<script src="../js/bootstrap.js"></script>
+		</head>
+		
+		<body>
+			 <nav class="navbar navbar-default navbar-fixed-top" style="background-color: #3d95cd" role="navigation">
+				<div class="container">
+					<div class="navbar-header">
+						<div class="navbar-brand" style="padding: 9px"><a class="btn back btn-warning"><i class="fa fa-fw fa-arrow-circle-left"></i> Kembali</a></div>
+					</div>
+				</div>
+			</nav>
+			
+			<div class="container mt70" id="data-produk">
+				<img src="../pic/materi/1.jpg" class="imgmateri img-responsive mb20" />
+				<div class="well">
+					<h2 class="text-center text-danger">Nama Produk</h2>
+					<p></p>
+				</div>
+			</div>
+		</body>
+	</html>
+	<script>
+		$(".btn").click(function(e){
+				e.preventDefault();
+				history.back(1);
+			});
+		function getdb(datas,dbloc){
+			$.getJSON(dbloc,function(dbs){
+				datas(dbs);
+			});
+		}
+		var hash=location.hash.substr(1);
+		getdb(function(db){
+			var a=$("#data-produk");
+			var produk='<img src="../img/'+db[hash].img+'" class="imgmateri img-responsive mb20" />';
+			produk+='<div class="well">';
+			produk+='<h2 class="text-center text-danger">'+db[hash].nama+'</h2>';
+			produk+='<p>'+db[hash].info+'</p>';
+			produk+='</div>';
+			a.html(produk);
+		},'../dp.json');
+	</script>
